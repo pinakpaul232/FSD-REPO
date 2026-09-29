@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>"hi"
 
-    </p>
+    <title>After-School Lesson</title>
+
+    <!-- Load Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Vue app -->
+    <div id="myApp">
+
+        <h1>{{ subject }}</h1>
+
+        <p>Location: {{ location }}</p>
+
+        <p>Price: £{{ price }}</p>
+
+        <img :src="image" :alt="alt">
+
+    </div>
+
+
+    <script>
+
+        const { createApp } = Vue;
+
+        const myApp = createApp({
+
+            data() {
+                return {
+
+                    subject: 'Computer Science',
+
+                    location: 'Hendon',
+
+                    price: 15,
+
+                    image: 'images/computer.jpg',
+
+                    alt: 'Computer Science lesson'
+
+                }
+            }
+
+        });
+
+        myApp.mount('#myApp');
+
+    </script>
+
 </body>
+
 </html>
